@@ -1,0 +1,163 @@
+\hypertarget{menu_8c}{\section{src/menu.c File Reference}
+\label{menu_8c}\index{src/menu.\+c@{src/menu.\+c}}
+}
+
+
+This file contains the functions to display and control player input for the main menu.  
+
+
+{\ttfamily \#include $<$ncurses.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}menu.\+h\char`\"{}}\\*
+Include dependency graph for menu.\+c\+:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{menu_8c_ae91d4cbee2dab64187187499dd0eecd4}{print\+\_\+menu} ()
+\begin{DoxyCompactList}\small\item\em This function controls player's input. \end{DoxyCompactList}\item 
+void \hyperlink{menu_8c_a3828e481ee755a381f935efd5898461a}{print\+\_\+option} (int choice)
+\begin{DoxyCompactList}\small\item\em This function prints the options for player to choose. \end{DoxyCompactList}\item 
+void \hyperlink{menu_8c_ab6635d8eb64f618b113156a8b4013223}{print\+\_\+score} (int current\+\_\+screen)
+\begin{DoxyCompactList}\small\item\em Print the Top 10 scores. \end{DoxyCompactList}\item 
+void \hyperlink{menu_8c_adeec5b7290f828f9713c903b17ee3442}{print\+\_\+credit} ()
+\begin{DoxyCompactList}\small\item\em This function prints the game credit. \end{DoxyCompactList}\item 
+void \hyperlink{menu_8c_aa1031ac362776e9a4c6004aeb5ff56ca}{quit\+\_\+game} ()
+\begin{DoxyCompactList}\small\item\em This function handle game exit. \end{DoxyCompactList}\item 
+void \hyperlink{menu_8c_a50df6dba748ab15a4eaa018240c9a0d0}{print\+\_\+selection} (int num, char choice\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This function prints the marking symbol showing the current option player is on. \end{DoxyCompactList}\item 
+void \hyperlink{menu_8c_adfdce9035c646d8393b3b90b04572c74}{print\+\_\+mess} (int num, char mess\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This function prints all available text in the menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the functions to display and control player input for the main menu. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{menu_8c_adeec5b7290f828f9713c903b17ee3442}{\index{menu.\+c@{menu.\+c}!print\+\_\+credit@{print\+\_\+credit}}
+\index{print\+\_\+credit@{print\+\_\+credit}!menu.\+c@{menu.\+c}}
+\subsubsection[{print\+\_\+credit}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+credit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_adeec5b7290f828f9713c903b17ee3442}
+
+
+This function prints the game credit. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{menu_8c_ae91d4cbee2dab64187187499dd0eecd4}{\index{menu.\+c@{menu.\+c}!print\+\_\+menu@{print\+\_\+menu}}
+\index{print\+\_\+menu@{print\+\_\+menu}!menu.\+c@{menu.\+c}}
+\subsubsection[{print\+\_\+menu}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_ae91d4cbee2dab64187187499dd0eecd4}
+
+
+This function controls player's input. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{menu_8c_adfdce9035c646d8393b3b90b04572c74}{\index{menu.\+c@{menu.\+c}!print\+\_\+mess@{print\+\_\+mess}}
+\index{print\+\_\+mess@{print\+\_\+mess}!menu.\+c@{menu.\+c}}
+\subsubsection[{print\+\_\+mess}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+mess (
+\begin{DoxyParamCaption}
+\item[{int}]{num, }
+\item[{char}]{mess\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_adfdce9035c646d8393b3b90b04572c74}
+
+
+This function prints all available text in the menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & define the position of the option \\
+\hline
+{\em mess} & array to store all available texts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{menu_8c_a3828e481ee755a381f935efd5898461a}{\index{menu.\+c@{menu.\+c}!print\+\_\+option@{print\+\_\+option}}
+\index{print\+\_\+option@{print\+\_\+option}!menu.\+c@{menu.\+c}}
+\subsubsection[{print\+\_\+option}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+option (
+\begin{DoxyParamCaption}
+\item[{int}]{choice}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_a3828e481ee755a381f935efd5898461a}
+
+
+This function prints the options for player to choose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em choice} & current position of the option in the menu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{menu_8c_ab6635d8eb64f618b113156a8b4013223}{\index{menu.\+c@{menu.\+c}!print\+\_\+score@{print\+\_\+score}}
+\index{print\+\_\+score@{print\+\_\+score}!menu.\+c@{menu.\+c}}
+\subsubsection[{print\+\_\+score}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{int}]{current\+\_\+screen}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_ab6635d8eb64f618b113156a8b4013223}
+
+
+Print the Top 10 scores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+screen} & current situation get the function is called \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{menu_8c_a50df6dba748ab15a4eaa018240c9a0d0}{\index{menu.\+c@{menu.\+c}!print\+\_\+selection@{print\+\_\+selection}}
+\index{print\+\_\+selection@{print\+\_\+selection}!menu.\+c@{menu.\+c}}
+\subsubsection[{print\+\_\+selection}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+selection (
+\begin{DoxyParamCaption}
+\item[{int}]{num, }
+\item[{char}]{choice\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_a50df6dba748ab15a4eaa018240c9a0d0}
+
+
+This function prints the marking symbol showing the current option player is on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & define the position of the option \\
+\hline
+{\em choice} & chosen option \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{menu_8c_aa1031ac362776e9a4c6004aeb5ff56ca}{\index{menu.\+c@{menu.\+c}!quit\+\_\+game@{quit\+\_\+game}}
+\index{quit\+\_\+game@{quit\+\_\+game}!menu.\+c@{menu.\+c}}
+\subsubsection[{quit\+\_\+game}]{\setlength{\rightskip}{0pt plus 5cm}void quit\+\_\+game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_aa1031ac362776e9a4c6004aeb5ff56ca}
+
+
+This function handle game exit. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}

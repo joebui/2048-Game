@@ -1,0 +1,11 @@
+1 player: Human
+Use UP, DOWN, RIGHT, LEFT key arrow to move the numbers in the table; The winning condition is determined by the score player gets when they fail the game; For 3 x 3, the minimum score to win is 1024, 4 x 4 is 2048 and 5 x 5 is 4096. 
+
+2 player: Human vs Human
+For player 1: use W, S, A, D to move the number on the left table; For player 2: use UP, DOWN, RIGHT, LEFT arrow key to move the number on the right table; The winning condition is determined by the person having the highest score after one of them fails the game.
+
+2 player: Human vs AI
+Use UP, DOWN, RIGHT, LEFT key arrow to move the numbers in the left table; The AI will be in the right table. In the unlimited-time mode, the winning condition is determined by the person having the highest score after one of them fails the game. In limited mode; the person that has no moves left before the time runs out shall fail the game, if no player fails when the clock reaches 0 then the player with highest score shall be the winner.
+
+1 -player: AI and AI vs AI
+After the game is over, you can then please Esc to quit or R to restart. You cannot press during the gameplay

@@ -1,0 +1,460 @@
+\hypertarget{2048_8c}{\section{src/2048.c File Reference}
+\label{2048_8c}\index{src/2048.\+c@{src/2048.\+c}}
+}
+
+
+This is the main file of the program, which is used to run the program.  
+
+
+{\ttfamily \#include $<$ncurses.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}key\+\_\+algorithm.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}menu.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\\*
+Include dependency graph for 2048.c\+:
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structplayer}{player}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{2048_8c_a0a3adc6e683551c15f4a01b3a5667f19}{init\+\_\+table} (int $\ast$a, int $\ast$s, bool $\ast$f, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Initialise the game board and setup the color pairs when starting the game. \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_a7f73fd0433ab73206fe7e001e06593f8}{init\+\_\+2\+\_\+table} (int $\ast$table1, int $\ast$score1, bool $\ast$is\+Fail1, int $\ast$table2, int $\ast$score2, bool $\ast$is\+Fail2, int $\ast$y, int $\ast$timer)
+\begin{DoxyCompactList}\small\item\em Initialize the game boards in 2-\/player game mode and setup the color pairs when starting the game. \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_a41d11706e51caa22e749d7c75f00bbc6}{print\+\_\+table} (int $\ast$a, int $\ast$s, bool $\ast$f, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Print all the current numbers of the game board on the terminal. \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_a9481ad4f370aa5c3051b8a2935cdd121}{print\+\_\+2\+\_\+table} (int $\ast$table1, int $\ast$score1, bool $\ast$is\+Fail1, int $\ast$table2, int $\ast$score2, bool $\ast$is\+Fail2, int $\ast$y, int $\ast$timer)
+\begin{DoxyCompactList}\small\item\em Print all the current numbers of the 2 game boards. \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_a45fd61a182011c5715a081e7ade97afb}{add\+\_\+value} (int $\ast$a, bool $\ast$f, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Add a new random number to the board (2 or 4). \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_a7135d74dac05ab38a285f746ba156056}{table\+\_\+choices} ()
+\begin{DoxyCompactList}\small\item\em Display game board's sizes for players to choose. \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_af364548e35e40979460d40db2fec5338}{game\+\_\+choices} (int $\ast$inp, int $\ast$timer)
+\begin{DoxyCompactList}\small\item\em Display game board's sizes for players to choose. \end{DoxyCompactList}\item 
+\hypertarget{2048_8c_aab923cba46e00ae12bb6881f8176de48}{void \hyperlink{2048_8c_aab923cba46e00ae12bb6881f8176de48}{time\+\_\+choice} ()}\label{2048_8c_aab923cba46e00ae12bb6881f8176de48}
+
+\begin{DoxyCompactList}\small\item\em Display the menu for player to choose time mode. \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_a8648fb0e6a9c19895a34b64b6d96c84a}{reset\+\_\+table} (int $\ast$a, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Reset all numbers on the board back to 0 (including game status and current score). \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{2048_8c_ac275c0196b05d46a8109803524f7d4e9}{random\+\_\+\+A\+I} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em Generate random A\+I (easy level). \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{2048_8c_a5ff786632fc08168ace7a131d9d02830}{first\+\_\+player\+\_\+move} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em Generate the move of human player 1. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{2048_8c_a5454216de7b567aee2c1d321d3b4ea75}{hvh\+\_\+player\+\_\+move} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em Generate the move of 2 players (human vs human). \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{2048_8c_aa8aa7fffb7f2e1e76652e85b1188da6d}{count\+\_\+down} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em Generate a countdown clock. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{2048_8c_a944b1c4bf5a1bbbdd7e01425bd134d9d}{medium\+\_\+\+A\+I} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em Generate medium A\+I (A\+I vs A\+I Mode). \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{2048_8c_ac65bbbeb846cafb7aee28fb2a0f23ba4}{smart\+\_\+\+A\+I} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em Generate smart A\+I (hard Mode). \end{DoxyCompactList}\item 
+bool \hyperlink{2048_8c_a131041ac65e15a9355a267080ba8f81b}{check\+\_\+stuck} (int $\ast$a, int $\ast$a\+\_\+clone, int length)
+\begin{DoxyCompactList}\small\item\em check if the table is stuck (not change after trying to move) \end{DoxyCompactList}\item 
+int \hyperlink{2048_8c_aa001d3a0d611540a4968728342f11159}{check\+\_\+matching\+Pair} (int $\ast$a, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Count the number of matching pairs in the board. \end{DoxyCompactList}\item 
+int \hyperlink{2048_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the main file of the program, which is used to run the program. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{2048_8c_a45fd61a182011c5715a081e7ade97afb}{\index{2048.\+c@{2048.\+c}!add\+\_\+value@{add\+\_\+value}}
+\index{add\+\_\+value@{add\+\_\+value}!2048.\+c@{2048.\+c}}
+\subsubsection[{add\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{bool $\ast$}]{f, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a45fd61a182011c5715a081e7ade97afb}
+
+
+Add a new random number to the board (2 or 4). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em f} & game status (game over or not) \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_aa001d3a0d611540a4968728342f11159}{\index{2048.\+c@{2048.\+c}!check\+\_\+matching\+Pair@{check\+\_\+matching\+Pair}}
+\index{check\+\_\+matching\+Pair@{check\+\_\+matching\+Pair}!2048.\+c@{2048.\+c}}
+\subsubsection[{check\+\_\+matching\+Pair}]{\setlength{\rightskip}{0pt plus 5cm}int check\+\_\+matching\+Pair (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_aa001d3a0d611540a4968728342f11159}
+
+
+Count the number of matching pairs in the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a131041ac65e15a9355a267080ba8f81b}{\index{2048.\+c@{2048.\+c}!check\+\_\+stuck@{check\+\_\+stuck}}
+\index{check\+\_\+stuck@{check\+\_\+stuck}!2048.\+c@{2048.\+c}}
+\subsubsection[{check\+\_\+stuck}]{\setlength{\rightskip}{0pt plus 5cm}bool check\+\_\+stuck (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{a\+\_\+clone, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a131041ac65e15a9355a267080ba8f81b}
+
+
+check if the table is stuck (not change after trying to move) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em a\+\_\+clone} & the clone array of a \\
+\hline
+{\em length} & board size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{2048_8c_aa8aa7fffb7f2e1e76652e85b1188da6d}{\index{2048.\+c@{2048.\+c}!count\+\_\+down@{count\+\_\+down}}
+\index{count\+\_\+down@{count\+\_\+down}!2048.\+c@{2048.\+c}}
+\subsubsection[{count\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ count\+\_\+down (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_aa8aa7fffb7f2e1e76652e85b1188da6d}
+
+
+Generate a countdown clock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & pointer to the \char`\"{}struct player\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a5ff786632fc08168ace7a131d9d02830}{\index{2048.\+c@{2048.\+c}!first\+\_\+player\+\_\+move@{first\+\_\+player\+\_\+move}}
+\index{first\+\_\+player\+\_\+move@{first\+\_\+player\+\_\+move}!2048.\+c@{2048.\+c}}
+\subsubsection[{first\+\_\+player\+\_\+move}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ first\+\_\+player\+\_\+move (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a5ff786632fc08168ace7a131d9d02830}
+
+
+Generate the move of human player 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & pointer to the \char`\"{}struct player\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_af364548e35e40979460d40db2fec5338}{\index{2048.\+c@{2048.\+c}!game\+\_\+choices@{game\+\_\+choices}}
+\index{game\+\_\+choices@{game\+\_\+choices}!2048.\+c@{2048.\+c}}
+\subsubsection[{game\+\_\+choices}]{\setlength{\rightskip}{0pt plus 5cm}void game\+\_\+choices (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{inp, }
+\item[{int $\ast$}]{timer}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_af364548e35e40979460d40db2fec5338}
+
+
+Display game board's sizes for players to choose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & input from player \\
+\hline
+\end{DoxyParams}
+\hypertarget{2048_8c_a5454216de7b567aee2c1d321d3b4ea75}{\index{2048.\+c@{2048.\+c}!hvh\+\_\+player\+\_\+move@{hvh\+\_\+player\+\_\+move}}
+\index{hvh\+\_\+player\+\_\+move@{hvh\+\_\+player\+\_\+move}!2048.\+c@{2048.\+c}}
+\subsubsection[{hvh\+\_\+player\+\_\+move}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ hvh\+\_\+player\+\_\+move (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a5454216de7b567aee2c1d321d3b4ea75}
+
+
+Generate the move of 2 players (human vs human). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & pointer to the \char`\"{}struct player\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a7f73fd0433ab73206fe7e001e06593f8}{\index{2048.\+c@{2048.\+c}!init\+\_\+2\+\_\+table@{init\+\_\+2\+\_\+table}}
+\index{init\+\_\+2\+\_\+table@{init\+\_\+2\+\_\+table}!2048.\+c@{2048.\+c}}
+\subsubsection[{init\+\_\+2\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+2\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{table1, }
+\item[{int $\ast$}]{score1, }
+\item[{bool $\ast$}]{is\+Fail1, }
+\item[{int $\ast$}]{table2, }
+\item[{int $\ast$}]{score2, }
+\item[{bool $\ast$}]{is\+Fail2, }
+\item[{int $\ast$}]{y, }
+\item[{int $\ast$}]{timer}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a7f73fd0433ab73206fe7e001e06593f8}
+
+
+Initialize the game boards in 2-\/player game mode and setup the color pairs when starting the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table1} & the array containing the numbers of player 1's game board \\
+\hline
+{\em score1} & the current score of player 1 \\
+\hline
+{\em is\+Fail1} & player 1's status (fail or not) \\
+\hline
+{\em table2} & the array containing the numbers of player 2's game board \\
+\hline
+{\em score2} & the current score of player 2 \\
+\hline
+{\em is\+Fail2} & player 2's status (fail or not) \\
+\hline
+{\em y} & number of columns of game boards \\
+\hline
+{\em inp} & input from the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a0a3adc6e683551c15f4a01b3a5667f19}{\index{2048.\+c@{2048.\+c}!init\+\_\+table@{init\+\_\+table}}
+\index{init\+\_\+table@{init\+\_\+table}!2048.\+c@{2048.\+c}}
+\subsubsection[{init\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{s, }
+\item[{bool $\ast$}]{f, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a0a3adc6e683551c15f4a01b3a5667f19}
+
+
+Initialise the game board and setup the color pairs when starting the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em s} & the current score \\
+\hline
+{\em f} & game status (fail or not) \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{2048.\+c@{2048.\+c}!main@{main}}
+\index{main@{main}!2048.\+c@{2048.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Main function. 
+
+\begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a944b1c4bf5a1bbbdd7e01425bd134d9d}{\index{2048.\+c@{2048.\+c}!medium\+\_\+\+A\+I@{medium\+\_\+\+A\+I}}
+\index{medium\+\_\+\+A\+I@{medium\+\_\+\+A\+I}!2048.\+c@{2048.\+c}}
+\subsubsection[{medium\+\_\+\+A\+I}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ medium\+\_\+\+A\+I (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a944b1c4bf5a1bbbdd7e01425bd134d9d}
+
+
+Generate medium A\+I (A\+I vs A\+I Mode). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & pointer to the \char`\"{}struct player\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a9481ad4f370aa5c3051b8a2935cdd121}{\index{2048.\+c@{2048.\+c}!print\+\_\+2\+\_\+table@{print\+\_\+2\+\_\+table}}
+\index{print\+\_\+2\+\_\+table@{print\+\_\+2\+\_\+table}!2048.\+c@{2048.\+c}}
+\subsubsection[{print\+\_\+2\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+2\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{table1, }
+\item[{int $\ast$}]{score1, }
+\item[{bool $\ast$}]{is\+Fail1, }
+\item[{int $\ast$}]{table2, }
+\item[{int $\ast$}]{score2, }
+\item[{bool $\ast$}]{is\+Fail2, }
+\item[{int $\ast$}]{y, }
+\item[{int $\ast$}]{timer}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a9481ad4f370aa5c3051b8a2935cdd121}
+
+
+Print all the current numbers of the 2 game boards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table1} & the array containing the numbers of player 1's game board \\
+\hline
+{\em score1} & the current score of player 1 \\
+\hline
+{\em is\+Fail1} & player 1's status (fail or not) \\
+\hline
+{\em table2} & the array containing the numbers of player 2's game board \\
+\hline
+{\em score2} & the current score of player 2 \\
+\hline
+{\em is\+Fail2} & player 2's status (fail or not) \\
+\hline
+{\em y} & number of columns of game boards \\
+\hline
+{\em inp} & input from the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a41d11706e51caa22e749d7c75f00bbc6}{\index{2048.\+c@{2048.\+c}!print\+\_\+table@{print\+\_\+table}}
+\index{print\+\_\+table@{print\+\_\+table}!2048.\+c@{2048.\+c}}
+\subsubsection[{print\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{s, }
+\item[{bool $\ast$}]{f, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a41d11706e51caa22e749d7c75f00bbc6}
+
+
+Print all the current numbers of the game board on the terminal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em s} & the current score \\
+\hline
+{\em f} & game status (fail or not) \\
+\hline
+{\em y} & column length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_ac275c0196b05d46a8109803524f7d4e9}{\index{2048.\+c@{2048.\+c}!random\+\_\+\+A\+I@{random\+\_\+\+A\+I}}
+\index{random\+\_\+\+A\+I@{random\+\_\+\+A\+I}!2048.\+c@{2048.\+c}}
+\subsubsection[{random\+\_\+\+A\+I}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ random\+\_\+\+A\+I (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_ac275c0196b05d46a8109803524f7d4e9}
+
+
+Generate random A\+I (easy level). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & pointer to the \char`\"{}struct player\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a8648fb0e6a9c19895a34b64b6d96c84a}{\index{2048.\+c@{2048.\+c}!reset\+\_\+table@{reset\+\_\+table}}
+\index{reset\+\_\+table@{reset\+\_\+table}!2048.\+c@{2048.\+c}}
+\subsubsection[{reset\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}void reset\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a8648fb0e6a9c19895a34b64b6d96c84a}
+
+
+Reset all numbers on the board back to 0 (including game status and current score). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_ac65bbbeb846cafb7aee28fb2a0f23ba4}{\index{2048.\+c@{2048.\+c}!smart\+\_\+\+A\+I@{smart\+\_\+\+A\+I}}
+\index{smart\+\_\+\+A\+I@{smart\+\_\+\+A\+I}!2048.\+c@{2048.\+c}}
+\subsubsection[{smart\+\_\+\+A\+I}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ smart\+\_\+\+A\+I (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_ac65bbbeb846cafb7aee28fb2a0f23ba4}
+
+
+Generate smart A\+I (hard Mode). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & pointer to the \char`\"{}struct player\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a7135d74dac05ab38a285f746ba156056}{\index{2048.\+c@{2048.\+c}!table\+\_\+choices@{table\+\_\+choices}}
+\index{table\+\_\+choices@{table\+\_\+choices}!2048.\+c@{2048.\+c}}
+\subsubsection[{table\+\_\+choices}]{\setlength{\rightskip}{0pt plus 5cm}void table\+\_\+choices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a7135d74dac05ab38a285f746ba156056}
+
+
+Display game board's sizes for players to choose. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
