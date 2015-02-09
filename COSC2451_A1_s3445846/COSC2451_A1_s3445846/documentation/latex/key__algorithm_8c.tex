@@ -1,0 +1,181 @@
+\hypertarget{key__algorithm_8c}{\section{src/key\+\_\+algorithm.c File Reference}
+\label{key__algorithm_8c}\index{src/key\+\_\+algorithm.\+c@{src/key\+\_\+algorithm.\+c}}
+}
+
+
+This is the file to store the functions to control the game board based on player's input.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+Include dependency graph for key\+\_\+algorithm.\+c\+:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{key__algorithm_8c_a59430058df52690175031687e5506101}{down} (int $\ast$a, int $\ast$s, bool $\ast$is, bool $\ast$im, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em This function will change and re-\/arrange the values of the table when users press the \char`\"{}\+D\+O\+W\+N\char`\"{} button on the keyboard. \end{DoxyCompactList}\item 
+void \hyperlink{key__algorithm_8c_a1f8f8614ae60cef97b16274c59d7ebdf}{up} (int $\ast$a, int $\ast$s, bool $\ast$is, bool $\ast$im, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em This function will change and re-\/arrange the values of the table when users press the \char`\"{}\+U\+P\char`\"{} button on the keyboard. \end{DoxyCompactList}\item 
+void \hyperlink{key__algorithm_8c_a408cab1497549b39871d1ee0ec3e238b}{right} (int $\ast$a, int $\ast$s, bool $\ast$is, bool $\ast$im, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em This function will change and re-\/arrange the values of the table when users press the \char`\"{}\+R\+I\+G\+H\+T\char`\"{} button on the keyboard. \end{DoxyCompactList}\item 
+void \hyperlink{key__algorithm_8c_ab48885cdd13b96a5d2a67da717b83393}{left} (int $\ast$a, int $\ast$s, bool $\ast$is, bool $\ast$im, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em This function will change and re-\/arrange the values of the table when users press the \char`\"{}\+L\+E\+F\+T\char`\"{} button on the keyboard. \end{DoxyCompactList}\item 
+void \hyperlink{key__algorithm_8c_a24a5170df0f883747ebc6faeb68dad68}{check\+\_\+failing} (int $\ast$a, bool $\ast$fail, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em This function checks if the game board is full and there is no matching pairs left. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the file to store the functions to control the game board based on player's input. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{key__algorithm_8c_a24a5170df0f883747ebc6faeb68dad68}{\index{key\+\_\+algorithm.\+c@{key\+\_\+algorithm.\+c}!check\+\_\+failing@{check\+\_\+failing}}
+\index{check\+\_\+failing@{check\+\_\+failing}!key\+\_\+algorithm.\+c@{key\+\_\+algorithm.\+c}}
+\subsubsection[{check\+\_\+failing}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+failing (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{bool $\ast$}]{fail, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{key__algorithm_8c_a24a5170df0f883747ebc6faeb68dad68}
+
+
+This function checks if the game board is full and there is no matching pairs left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em fail} & boolean to check if the game is over \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{key__algorithm_8c_a59430058df52690175031687e5506101}{\index{key\+\_\+algorithm.\+c@{key\+\_\+algorithm.\+c}!down@{down}}
+\index{down@{down}!key\+\_\+algorithm.\+c@{key\+\_\+algorithm.\+c}}
+\subsubsection[{down}]{\setlength{\rightskip}{0pt plus 5cm}void down (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{s, }
+\item[{bool $\ast$}]{is, }
+\item[{bool $\ast$}]{im, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{key__algorithm_8c_a59430058df52690175031687e5506101}
+
+
+This function will change and re-\/arrange the values of the table when users press the \char`\"{}\+D\+O\+W\+N\char`\"{} button on the keyboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em s} & the current score \\
+\hline
+{\em is} & boolean to check if the numbers are able to move down \\
+\hline
+{\em im} & boolean to check if there is at least a matching pair of numbers \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{key__algorithm_8c_ab48885cdd13b96a5d2a67da717b83393}{\index{key\+\_\+algorithm.\+c@{key\+\_\+algorithm.\+c}!left@{left}}
+\index{left@{left}!key\+\_\+algorithm.\+c@{key\+\_\+algorithm.\+c}}
+\subsubsection[{left}]{\setlength{\rightskip}{0pt plus 5cm}void left (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{s, }
+\item[{bool $\ast$}]{is, }
+\item[{bool $\ast$}]{im, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{key__algorithm_8c_ab48885cdd13b96a5d2a67da717b83393}
+
+
+This function will change and re-\/arrange the values of the table when users press the \char`\"{}\+L\+E\+F\+T\char`\"{} button on the keyboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em s} & the current score \\
+\hline
+{\em is} & boolean to check if the numbers are able to move left \\
+\hline
+{\em im} & boolean to check if there is at least a matching pair of numbers \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{key__algorithm_8c_a408cab1497549b39871d1ee0ec3e238b}{\index{key\+\_\+algorithm.\+c@{key\+\_\+algorithm.\+c}!right@{right}}
+\index{right@{right}!key\+\_\+algorithm.\+c@{key\+\_\+algorithm.\+c}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}void right (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{s, }
+\item[{bool $\ast$}]{is, }
+\item[{bool $\ast$}]{im, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{key__algorithm_8c_a408cab1497549b39871d1ee0ec3e238b}
+
+
+This function will change and re-\/arrange the values of the table when users press the \char`\"{}\+R\+I\+G\+H\+T\char`\"{} button on the keyboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em s} & the current score \\
+\hline
+{\em is} & boolean to check if the numbers are able to move right \\
+\hline
+{\em im} & boolean to check if there is at least a matching pair of numbers \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{key__algorithm_8c_a1f8f8614ae60cef97b16274c59d7ebdf}{\index{key\+\_\+algorithm.\+c@{key\+\_\+algorithm.\+c}!up@{up}}
+\index{up@{up}!key\+\_\+algorithm.\+c@{key\+\_\+algorithm.\+c}}
+\subsubsection[{up}]{\setlength{\rightskip}{0pt plus 5cm}void up (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{s, }
+\item[{bool $\ast$}]{is, }
+\item[{bool $\ast$}]{im, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{key__algorithm_8c_a1f8f8614ae60cef97b16274c59d7ebdf}
+
+
+This function will change and re-\/arrange the values of the table when users press the \char`\"{}\+U\+P\char`\"{} button on the keyboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em s} & the current score \\
+\hline
+{\em is} & boolean to check if the numbers are able to move up \\
+\hline
+{\em im} & boolean to check if there is at least a matching pair of numbers \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+the value is not 0 in the same column with the key value

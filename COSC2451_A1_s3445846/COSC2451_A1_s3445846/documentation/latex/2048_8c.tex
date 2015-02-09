@@ -1,0 +1,171 @@
+\hypertarget{2048_8c}{\section{src/2048.c File Reference}
+\label{2048_8c}\index{src/2048.\+c@{src/2048.\+c}}
+}
+
+
+This is the main file of the program, which is used to run the program.  
+
+
+{\ttfamily \#include $<$ncurses.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}key\+\_\+algorithm.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}menu.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\\*
+Include dependency graph for 2048.c\+:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{2048_8c_a0a3adc6e683551c15f4a01b3a5667f19}{init\+\_\+table} (int $\ast$a, int $\ast$s, bool $\ast$f, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Initialise the game board and setup the color pairs when starting the game. \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_a41d11706e51caa22e749d7c75f00bbc6}{print\+\_\+table} (int $\ast$a, int $\ast$s, bool $\ast$f, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Print all the current numbers of the game board on the terminal. \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_a45fd61a182011c5715a081e7ade97afb}{add\+\_\+value} (int $\ast$a, bool $\ast$f, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Add a new random number to the board (2 or 4) \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_a7135d74dac05ab38a285f746ba156056}{table\+\_\+choices} ()
+\begin{DoxyCompactList}\small\item\em Display game board's sizes for players to choose. \end{DoxyCompactList}\item 
+void \hyperlink{2048_8c_a8648fb0e6a9c19895a34b64b6d96c84a}{reset\+\_\+table} (int $\ast$a, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Reset all numbers on the board back to 0 (including game status and current score). \end{DoxyCompactList}\item 
+int \hyperlink{2048_8c_abf9e6b7e6f15df4b525a2e7705ba3089}{main} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the main file of the program, which is used to run the program. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{2048_8c_a45fd61a182011c5715a081e7ade97afb}{\index{2048.\+c@{2048.\+c}!add\+\_\+value@{add\+\_\+value}}
+\index{add\+\_\+value@{add\+\_\+value}!2048.\+c@{2048.\+c}}
+\subsubsection[{add\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{bool $\ast$}]{f, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a45fd61a182011c5715a081e7ade97afb}
+
+
+Add a new random number to the board (2 or 4) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em f} & game status (game over or not) \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a0a3adc6e683551c15f4a01b3a5667f19}{\index{2048.\+c@{2048.\+c}!init\+\_\+table@{init\+\_\+table}}
+\index{init\+\_\+table@{init\+\_\+table}!2048.\+c@{2048.\+c}}
+\subsubsection[{init\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{s, }
+\item[{bool $\ast$}]{f, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a0a3adc6e683551c15f4a01b3a5667f19}
+
+
+Initialise the game board and setup the color pairs when starting the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em s} & the current score \\
+\hline
+{\em f} & game status (game over or not) \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_abf9e6b7e6f15df4b525a2e7705ba3089}{\index{2048.\+c@{2048.\+c}!main@{main}}
+\index{main@{main}!2048.\+c@{2048.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char const $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_abf9e6b7e6f15df4b525a2e7705ba3089}
+
+
+Main function. 
+
+\begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a41d11706e51caa22e749d7c75f00bbc6}{\index{2048.\+c@{2048.\+c}!print\+\_\+table@{print\+\_\+table}}
+\index{print\+\_\+table@{print\+\_\+table}!2048.\+c@{2048.\+c}}
+\subsubsection[{print\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{s, }
+\item[{bool $\ast$}]{f, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a41d11706e51caa22e749d7c75f00bbc6}
+
+
+Print all the current numbers of the game board on the terminal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em s} & the current score \\
+\hline
+{\em f} & game status (game over or not) \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a8648fb0e6a9c19895a34b64b6d96c84a}{\index{2048.\+c@{2048.\+c}!reset\+\_\+table@{reset\+\_\+table}}
+\index{reset\+\_\+table@{reset\+\_\+table}!2048.\+c@{2048.\+c}}
+\subsubsection[{reset\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}void reset\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{a, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a8648fb0e6a9c19895a34b64b6d96c84a}
+
+
+Reset all numbers on the board back to 0 (including game status and current score). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the array containing the numbers of the game board \\
+\hline
+{\em y} & colum length of game board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{2048_8c_a7135d74dac05ab38a285f746ba156056}{\index{2048.\+c@{2048.\+c}!table\+\_\+choices@{table\+\_\+choices}}
+\index{table\+\_\+choices@{table\+\_\+choices}!2048.\+c@{2048.\+c}}
+\subsubsection[{table\+\_\+choices}]{\setlength{\rightskip}{0pt plus 5cm}void table\+\_\+choices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{2048_8c_a7135d74dac05ab38a285f746ba156056}
+
+
+Display game board's sizes for players to choose. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}

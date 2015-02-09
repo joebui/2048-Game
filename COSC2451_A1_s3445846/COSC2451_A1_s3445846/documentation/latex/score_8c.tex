@@ -1,0 +1,105 @@
+\hypertarget{score_8c}{\section{src/score.c File Reference}
+\label{score_8c}\index{src/score.\+c@{src/score.\+c}}
+}
+
+
+This file get player's information and store in the text file.  
+
+
+{\ttfamily \#include $<$ncurses.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\\*
+Include dependency graph for score.\+c\+:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{score_8c_a30633528193b31674bc001c885e2961a}{store\+\_\+score} (int $\ast$score)
+\begin{DoxyCompactList}\small\item\em Write the current score of player into file. \end{DoxyCompactList}\item 
+void \hyperlink{score_8c_aa61585b8ede4f2437012c5edf83fabd6}{sort\+\_\+score} ()
+\begin{DoxyCompactList}\small\item\em Soft scores in descending order. \end{DoxyCompactList}\item 
+void \hyperlink{score_8c_a167c632a79fa5a5d38e958b213ad33ef}{get\+\_\+name} (char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Ask player to input name. \end{DoxyCompactList}\item 
+int \hyperlink{score_8c_a9983b5cfb1086c7fd33bec103ba201db}{get\+\_\+time} (int choice)
+\begin{DoxyCompactList}\small\item\em Get playtime of player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file get player's information and store in the text file. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{score_8c_a167c632a79fa5a5d38e958b213ad33ef}{\index{score.\+c@{score.\+c}!get\+\_\+name@{get\+\_\+name}}
+\index{get\+\_\+name@{get\+\_\+name}!score.\+c@{score.\+c}}
+\subsubsection[{get\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}void get\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{score_8c_a167c632a79fa5a5d38e958b213ad33ef}
+
+
+Ask player to input name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{score_8c_a9983b5cfb1086c7fd33bec103ba201db}{\index{score.\+c@{score.\+c}!get\+\_\+time@{get\+\_\+time}}
+\index{get\+\_\+time@{get\+\_\+time}!score.\+c@{score.\+c}}
+\subsubsection[{get\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+time (
+\begin{DoxyParamCaption}
+\item[{int}]{choice}
+\end{DoxyParamCaption}
+)}}\label{score_8c_a9983b5cfb1086c7fd33bec103ba201db}
+
+
+Get playtime of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em choice} & the option to get date, month, or year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{score_8c_aa61585b8ede4f2437012c5edf83fabd6}{\index{score.\+c@{score.\+c}!sort\+\_\+score@{sort\+\_\+score}}
+\index{sort\+\_\+score@{sort\+\_\+score}!score.\+c@{score.\+c}}
+\subsubsection[{sort\+\_\+score}]{\setlength{\rightskip}{0pt plus 5cm}void sort\+\_\+score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{score_8c_aa61585b8ede4f2437012c5edf83fabd6}
+
+
+Soft scores in descending order. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{score_8c_a30633528193b31674bc001c885e2961a}{\index{score.\+c@{score.\+c}!store\+\_\+score@{store\+\_\+score}}
+\index{store\+\_\+score@{store\+\_\+score}!score.\+c@{score.\+c}}
+\subsubsection[{store\+\_\+score}]{\setlength{\rightskip}{0pt plus 5cm}void store\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{score}
+\end{DoxyParamCaption}
+)}}\label{score_8c_a30633528193b31674bc001c885e2961a}
+
+
+Write the current score of player into file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & current score \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}

@@ -1,0 +1,13 @@
+CC=clang 
+EXEC=2048
+
+$(EXEC): $(EXEC).c
+	$(CC) -o $(EXEC) $(EXEC).c -lncurses
+	
+.PHONY: clean
+clean:
+	rm *.o 
+	
+.PHONY: cleanall
+cleanall:
+	rm *.o *~ $(EXEC)
